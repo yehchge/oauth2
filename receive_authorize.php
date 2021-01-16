@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/config.php';
+
 $code = isset($_GET['code'])?trim($_GET['code']):'';
 
 if (!$code) {
@@ -11,7 +13,7 @@ if (!$code) {
     echo $str;exit;
 }
 
-$url = 'http://localhost/oauth2/token.php';
+$url = _SITE_URL.'/token.php';
 $responseBody = fetch($url, 'POST', array(
     'client_id'     => 'testclient',
     'client_secret' => 'testpass',
@@ -31,7 +33,7 @@ if (!isset($responseArr['access_token'])) {
 $accessToken = $responseArr['access_token'];
 $expiresIn = $responseArr['expires_in'];
 
-$url = 'http://localhost/oauth2/me.php';
+$url = _SITE_URL.'/me.php';
 $responseBody = fetch($url, 'GET', array(
     'client_id'     => 'testclient',
     'client_secret' => 'testpass',
@@ -53,7 +55,6 @@ function fetch($url, $type = "GET", $post_data = array(), $custom_header = array
 
         case "POST":
             $ch = curl_init();
-
 
             curl_setopt($ch, CURLOPT_URL, $url);
 

@@ -68,8 +68,12 @@ class DB extends PDO {
     {
         try {
             $persistent = isset($db['persistent']) ? $db['persistent'] : false;
-            parent::__construct("{$db['type']}:host={$db['host']};dbname={$db['name']}", $db['user'], $db['pass'], array(\PDO::ATTR_PERSISTENT => $persistent));
-            parent::exec('SET names utf8');
+            parent::__construct("{$db['type']}:host={$db['host']};dbname={$db['name']}", $db['user'], $db['pass'], array(
+                \PDO::ATTR_PERSISTENT => $persistent,
+                \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+            self::setCharset('utf8');
+            self::setFetchMode(PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

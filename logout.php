@@ -7,4 +7,4 @@ $_SESSION = array();
 // Destroy the session.
 session_destroy();
 
-header("location: index.php");
+header("location: ./index.php");

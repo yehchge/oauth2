@@ -14,3 +14,4 @@ Install:
 Require:
 
 php-pdo
+php-curl

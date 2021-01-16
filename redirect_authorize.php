@@ -1,8 +1,10 @@
 <?php
 
-$redirectUrl = 'http://localhost/oauth2/receive_authorize.php';
+require __DIR__.'/config.php';
 
-$url = 'http://localhost/oauth2/authorize.php?'.http_build_query(array(
+$redirectUrl = _SITE_URL.'/receive_authorize.php';
+
+$url = _SITE_URL.'/authorize.php?'.http_build_query(array(
     'response_type' => 'code',
     'client_id' => 'testclient',
     // 'redirect_uri' => $redirectUrl,

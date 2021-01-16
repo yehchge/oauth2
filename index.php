@@ -18,13 +18,13 @@ session_start();
 <?php
 if(isset($_SESSION["loggedin"])):
 ?>
-        <p><a href="redirect_authorize.php">Authorize</p>
-        <p><a href="logout.php">Logout</a></p>
+        <p><a href="./redirect_authorize.php">Authorize</p>
+        <p><a href="./logout.php">Logout</a></p>
 <?php
 else:    
 ?>
-        <p><a href="login.php">Login</a></p>
-        <p><a href="register.php">Register</a></p>
+        <p><a href="./login.php">Login</a></p>
+        <p><a href="./register.php">Register</a></p>
 <?php    
 endif;
 ?>
