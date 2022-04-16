@@ -1,17 +1,17 @@
-## OAuth2 PHP Server & Client Test ##
+# OAuth2 PHP Server & Client Test #
 
-Desc:
+### desc ###
 
 This is a OAuth2 Server test Project.
 
-Install:
+### install ###
 
-1. $ composer install
-2. $ cp config.sample.php config.php
-3. $ vi config.php
-4. export DB.sql
+*. $ composer install
+*. $ cp config.sample.php config.php
+*. $ vi config.php
+*. export DB.sql
 
-Require:
+### require ###
 
 php-pdo
 php-curl
